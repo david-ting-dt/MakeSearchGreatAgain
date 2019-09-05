@@ -1,14 +1,10 @@
 import React from 'react';
-import { httpGet } from '../scripts/scripts';
-import '../styles/App.scss';
+import { httpGet } from 'scripts/scripts';
 
 function App() {
     return (
-        <div className="App">
-            <input
-                placeholder="Search"
-
-            />
+        <div className="app">
+            <input placeholder="Search" />
             <button onClick={httpGet}>BUTTTTON</button>
         </div>
     );
