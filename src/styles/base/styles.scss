@@ -1,31 +1,35 @@
+body {
+  font-size: 1.4rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(235, 238, 241);
+}
+
 .app {
   min-height: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #E0E0E0;
-  font-size: 1.4rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search-button {
   color: #ffffff;
-  border-color: #326752;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#00bc6f),
-    to(#0d9c52)
-  );
+  border: 1px solid #326752;
+  font-size: 16px;
   background-image: linear-gradient(-180deg, #00bc6f 0%, #0d9c52 100%);
-//   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 133, 80, 0.25);
-//   box-shadow: 0 2px 4px 0 rgba(0, 133, 80, 0.25);
   padding: 0.4rem 1.2rem;
   border-radius: 0.4rem;
   margin: 0 20px;
   cursor: pointer;
+  &:hover {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#00bc6f),
+      to(#00aa65)
+    );
+  }
 }
 
 .search-bar {
@@ -35,7 +39,6 @@
   padding: 0 1rem;
   display: flex;
   flex-direction: row;
-
   input {
     display: block;
     width: 100%;
@@ -48,11 +51,10 @@
     border: 1px solid #c5c9ce;
     border-radius: 0.4rem;
     padding: 0.4rem 1rem;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: border-color ease-in-out 0.15s;
-    transition: border-color ease-in-out 0.15s;
-    background-clip: padding-box;
+    &:focus {
+      border: 2px solid #8241aa;
+      outline: none;
+    }
   }
 }
 
@@ -60,25 +62,41 @@
   flex: 1;
   width: 80%;
   background: #ffffff;
+  padding-top: 20px;
   box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.025);
-  justify-content: center;
   .content-header {
     font-weight: 500;
-    margin: 10px 0;
-  };
+    width: 80%;
+    margin: 20px auto;
+  }
   .header-line {
-      height: 2px;
-      background-color: grey;
-      width: 90%;
-      margin: 10px auto;
+    height: 2px;
+    background-color: grey;
+    width: 80%;
+    margin: 0px auto;
   }
 }
 
-.col {
-  border: 1px solid red;
-}
-
-.jc {
+.row-content {
   display: flex;
   justify-content: center;
 }
+
+.content-item {
+  padding: 10px 0 10px 0;
+  margin: 0 auto;
+  width: 80%;
+  &:hover {
+    background-color: rgb(243, 244, 245);;
+  }
+}
+
+.content-divider {
+  height: 1.5px;
+  background-color: #C0C0C0;
+  width: 80%;
+  margin: 0px auto;
+}
+
+
+

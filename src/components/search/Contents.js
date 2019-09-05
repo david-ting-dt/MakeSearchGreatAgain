@@ -5,24 +5,27 @@ const Contents = props => {
         const { _id: id, _source: source } = client;
         const { firstname, lastname } = source;
         return (
-            <div key={id} className="row">
-                <div className="col-md-6 jc">{firstname}</div>
-                <div className='col-md-6 jc'>{lastname}</div>
-            </div>
+            <>
+                <div key={id} className="row content-item">
+                    <div className="col-md-6 row-content">{firstname}</div>
+                    <div className='col-md-6 row-content'>{lastname}</div>
+                </div>
+                <div className='content-divider' />
+            </>
         )
     });
 
     return (
-        <div className='contents cf'>
+        <div className='contents'>
             <div className='row content-header'>
-                <div className='col-md-6 jc'>
+                <div className='col-md-6 row-content'>
                     First name
                 </div>
-                <div className='col-md-6 jc'>
+                <div className='col-md-6 row-content'>
                     Last name
                 </div>
             </div>
-            <div className="header-line"/>
+            <div className="header-line" />
             {clients}
         </div>
     );
