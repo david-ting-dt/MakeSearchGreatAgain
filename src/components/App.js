@@ -3,7 +3,7 @@ import { httpGet } from '../scripts/scripts';
 import { hits } from '../sample_es_data.json';
 
 import SearchBar from 'components/search/SearchBar';
-import Contents from 'components/search/Contents';
+import DisplayArea from 'components/search/DisplayArea';
 
 function App() {
     const [data, setData] = useState(hits.hits);
@@ -20,7 +20,7 @@ function App() {
     return (
         <div className="app">
             <SearchBar onClick={onClickHandler} />
-            <Contents data={data} />
+            <DisplayArea data={data} />
         </div>
     );
 }

@@ -58,13 +58,13 @@ body {
   }
 }
 
-.contents {
+.display-area {
   flex: 1;
   width: 80%;
   background: #ffffff;
   padding-top: 20px;
   box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.025);
-  .content-header {
+  .display-area-header {
     font-weight: 500;
     width: 80%;
     margin: 20px auto;
@@ -82,7 +82,7 @@ body {
   justify-content: center;
 }
 
-.content-item {
+.display-item {
   padding: 10px 0 10px 0;
   margin: 0 auto;
   width: 80%;
