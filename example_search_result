@@ -1,0 +1,105 @@
+GET /my_index/_search?q=parnell
+
+{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 0.2876821,
+    "hits" : [
+      {
+        "_index" : "my_index",
+        "_type" : "_doc",
+        "_id" : "1",
+        "_score" : 0.2876821,
+        "_source" : {
+          "id" : "8af16c3b-5f41-458d-940e-49c7f5ec087a",
+          "type" : "clientEngagement",
+          "attributes" : {
+            "clientCode" : "SMITH01",
+            "closedDate" : "2018-02-02",
+            "contactInformation" : {
+              "id" : "88efba76-8847-45df-893d-601e99659723",
+              "contactType" : "Individual",
+              "organisationName" : "Myob Accounting",
+              "title" : "Mr",
+              "initials" : "JA",
+              "firstName" : "John",
+              "middleName" : "Abel",
+              "lastName" : "Smith",
+              "dateOfBirth" : "2016-08-29",
+              "placeOfBirth" : "Auckland",
+              "sex" : "Unspecified",
+              "isRestricted" : "false",
+              "acn" : "005 749 986",
+              "abn" : {
+                "number" : "53 086 760 303",
+                "branch" : "001"
+              },
+              "tfn" : "123 456 782",
+              "irdNumber" : "48-800-898",
+              "nzbn" : "A-0892",
+              "wpn" : "37118629",
+              "addresses" : [
+                {
+                  "id" : "6ada65f8-6646-459d-bdb1-6dace363ab45",
+                  "line1" : "A56 Gladstone Road",
+                  "line2" : "Parnell",
+                  "line3" : "",
+                  "town" : "Auckland",
+                  "county" : "Auckland",
+                  "country" : "New Zealand",
+                  "postCode" : "1010",
+                  "type" : "Business"
+                }
+              ],
+              "phones" : [
+                {
+                  "id" : "1cc6f332-2148-4cc1-be36-4e1339a754ea",
+                  "type" : "Business",
+                  "phoneNumber" : "027567876"
+                }
+              ],
+              "emails" : [
+                {
+                  "id" : "7078d03b-bdd1-47fd-a27f-7cf2ea59dfda",
+                  "type" : "Business",
+                  "email" : "steve.smith.cp.00@gmail.com"
+                }
+              ],
+              "websites" : [
+                "www.myob.com"
+              ],
+              "websiteAddresses" : [
+                {
+                  "id" : "1cc6f332-2148-4cc1-be36-4e1339a754eb",
+                  "url" : "www.42IsAwesome.com"
+                }
+              ]
+            },
+            "primaryContact" : {
+              "firstname" : "Steve",
+              "lastname" : "Smith",
+              "phone" : 38652049,
+              "email" : "steve.smith@email.com"
+            },
+            "bankDetails" : {
+              "accountName" : "ASB Bank",
+              "accountNumber" : 123456789,
+              "reference" : 123456
+            }
+          }
+        }
+      }
+    ]
+  }
+}
