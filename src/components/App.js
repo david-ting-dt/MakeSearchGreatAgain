@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { httpGet } from '../scripts/scripts';
 import { hits } from '../sample_es_data.json';
-import '../styles/App.scss';
 
 function App() {
     const [data, setData] = useState(hits.hits);
