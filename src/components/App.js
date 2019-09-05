@@ -12,27 +12,15 @@ function App() {
     // });
 
     const onClickHandler = () => {
-        // promise.then(response => {
-        //     setData(response);
+        console.log("onclick")
 
-        // })
     }
 
-    const clients = data.map(client => {
-        const { _id: id, _source: source } = client;
-        const { firstname, lastname } = source;
-        return (
-            <div key={id}>
-                <div>{firstname}</div>
-                <div>{lastname}</div>
-            </div>
-        )
-    });
 
     return (
         <div className="app">
-            <SearchBar />
-            <Contents />
+            <SearchBar onClick={onClickHandler} />
+            <Contents data={data} />
         </div>
     );
 }
