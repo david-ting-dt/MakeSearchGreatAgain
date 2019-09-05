@@ -1,26 +1,33 @@
 import React, { useState } from 'react';
-import { httpGet } from '../scripts/scripts';
-import { hits } from '../sample_es_data.json';
-
 import SearchBar from 'components/search/SearchBar';
 import DisplayArea from 'components/search/DisplayArea';
 
+
 function App() {
-    const [data, setData] = useState(hits.hits);
-    // const promise = new Promise((resolve, reject) => {
-    //     httpGet().then(response => resolve(response));
-    // });
+    const [value, setValue] = useState(":");
+    const [searchValue, setSearchValue] = useState();
 
-    const onClickHandler = () => {
-        
+    const URL = `https://search-clients-hackdays2019-2-l5jsbxllcgxsaxostzcs2uc2im.ap-southeast-2.es.amazonaws.com/demo-in-the-morning/_search?q=*${value}*`
 
+
+    const status = (response) => {
+        if (response.status >= 200 && response.status < 300) {
+            return Promise.resolve(response)
+        } else {
+            return Promise.reject(new Error(response.statusText))
+        }
     }
+
+    fetch(URL)
+        .then(status)
+        .then(response => response.json())
+        .then(data => setSearchValue(data.hits.hits));
 
 
     return (
         <div className="app">
-            <SearchBar onClick={onClickHandler} />
-            <DisplayArea data={data} />
+            <SearchBar setSearchValue={setSearchValue} value={value} setValue={setValue} />
+            <DisplayArea data={searchValue} />
         </div>
     );
 }

@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
-const DisplayArea = props => {
-    const contacts = props.data.map(client => {
+const DisplayArea = ({data}) => {
+    const contacts = data && data.map(client => {
         const { _id: id, _source: source } = client;
         const { firstname, lastname } = source;
         return (
-            <>
-                <div key={id} className="row display-item">
+            <Fragment key={id}>
+                <div className="row display-item">
                     <div className="col-md-6 row-content">{firstname}</div>
                     <div className='col-md-6 row-content'>{lastname}</div>
                 </div>
                 <div className='content-divider' />
-            </>
+            </Fragment>
         )
     });
 
