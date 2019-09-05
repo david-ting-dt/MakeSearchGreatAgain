@@ -1,11 +1,11 @@
 export const httpGet = () => {
     const URL = "http://api.icndb.com/jokes";
 
-    fetch(URL, {
+    return fetch(URL, {
         method: "GET",
         headers: {
-            'Content-Type': 'application/json',
+            // 'Content-Type': 'application/json',
         }
     })
-    .then(response => response.json()).then(response => console.log(response));
+    .then(response => response.json()).then(response => response);
 }
