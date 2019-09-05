@@ -4,9 +4,9 @@ import { hits } from '../sample_es_data.json';
 
 function App() {
     const [data, setData] = useState(hits.hits);
-    const promise = new Promise((resolve, reject) => {
-        httpGet().then(response => resolve(response));
-    });
+    // const promise = new Promise((resolve, reject) => {
+    //     httpGet().then(response => resolve(response));
+    // });
 
     const onClickHandler = () => {
         // promise.then(response => {
