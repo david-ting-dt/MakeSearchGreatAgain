@@ -1,10 +1,13 @@
 import React from 'react';
 import { debounce } from "lodash";
+import searchWordCustomize from '../../Search_word_customize';
 
 const SearchBar = ({ setSearchValue, value, setValue }) => {
 
     const onChangeHandler = (inputValue) => {
-        const URL = `https://search-clients-hackdays2019-2-l5jsbxllcgxsaxostzcs2uc2im.ap-southeast-2.es.amazonaws.com/demo-in-the-morning/_search?q=*${inputValue}*`
+        const value = searchWordCustomize(inputValue);
+
+        const URL = `https://search-clients-hackdays2019-2-l5jsbxllcgxsaxostzcs2uc2im.ap-southeast-2.es.amazonaws.com/demo-in-the-morning/_search?q=*${value}*`
 
 
         const status = (response) => {
@@ -20,32 +23,14 @@ const SearchBar = ({ setSearchValue, value, setValue }) => {
             .then(response => response.json())
             .then(data => setSearchValue(data.hits.hits));
 
-        setValue(inputValue);
+        setValue(value);
     }
-
-    // const search = e => {
-    //     console.log("search");
-    //     debounce(() => {
-    //         console.log("debounce");
-    //         setValue(e.target.value);
-    //     }, 200);
-    // }
-
-    // const onClickHandler = () => {
-    //     setValue(value)
-    // };
 
     const debounceCall = debounce(onChangeHandler, 100);
 
     return (
         <div className='search-bar'>
             <input placeholder='Search...' onChange={(e) => debounceCall(e.target.value)} />
-            <button
-                className='search-button'
-            // onClick={onClickHandler}
-            >
-                Search
-            </button>
         </div>
     );
 }
