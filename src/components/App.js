@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from 'components/search/SearchBar';
 import DisplayArea from 'components/search/DisplayArea';
+import logo from '../myob_logo.png';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
     return (
         <div className="app">
+            <img src={logo} />
             <SearchBar setSearchValue={setSearchValue} value={value} setValue={setValue} />
             <DisplayArea data={searchValue} />
         </div>
