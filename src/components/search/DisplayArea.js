@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 
 const DisplayArea = ({data}) => {
+    console.log(data)
     const contacts = data && data.map(client => {
         const { _id: id, _source: source } = client;
         const { firstname, lastname } = source;
