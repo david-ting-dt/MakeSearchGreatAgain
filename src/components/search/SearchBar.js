@@ -23,29 +23,11 @@ const SearchBar = ({ setSearchValue, value, setValue }) => {
         setValue(inputValue);
     }
 
-    // const search = e => {
-    //     console.log("search");
-    //     debounce(() => {
-    //         console.log("debounce");
-    //         setValue(e.target.value);
-    //     }, 200);
-    // }
-
-    // const onClickHandler = () => {
-    //     setValue(value)
-    // };
-
     const debounceCall = debounce(onChangeHandler, 100);
 
     return (
         <div className='search-bar'>
             <input placeholder='Search...' onChange={(e) => debounceCall(e.target.value)} />
-            <button
-                className='search-button'
-            // onClick={onClickHandler}
-            >
-                Search
-            </button>
         </div>
     );
 }
