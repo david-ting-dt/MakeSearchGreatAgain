@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react';
 
-const DisplayArea = ({ data }) => {
-    console.log(data)
-    const contacts = data && data.map(client => {
+const DisplayArea = (props) => {
+
+    //     const showModal = () => {
+    // props.ca
+    //     }
+
+    const contacts = props.data && props.data.map(client => {
         const { _id: id, _source: source } = client;
         const { firstname, lastname, contactType } = source;
         return (
             <Fragment key={id}>
-                <div className="row display-item">
+                <div className="row display-item" onClick={() => props.callback(source)}>
                     <div className='col-md-4 row-content'>{contactType}</div>
                     <div className="col-md-4 row-content">{firstname}</div>
                     <div className='col-md-4 row-content'>{lastname}</div>
