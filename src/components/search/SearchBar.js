@@ -3,7 +3,7 @@ import { debounce } from "lodash";
 
 const SearchBar = ({ setSearchValue, value, setValue }) => {
 
-    const onKeyDownHandler = (inputValue) => {
+    const onChangeHandler = (inputValue) => {
         const URL = `https://search-clients-hackdays2019-2-l5jsbxllcgxsaxostzcs2uc2im.ap-southeast-2.es.amazonaws.com/demo-in-the-morning/_search?q=*${inputValue}*`
 
 
@@ -35,11 +35,11 @@ const SearchBar = ({ setSearchValue, value, setValue }) => {
     //     setValue(value)
     // };
 
-    const debounceCall = debounce(onKeyDownHandler, 100);
+    const debounceCall = debounce(onChangeHandler, 100);
 
     return (
         <div className='search-bar'>
-            <input placeholder='Search...' onKeyDown={(e) => debounceCall(e.target.value)} />
+            <input placeholder='Search...' onChange={(e) => debounceCall(e.target.value)} />
             <button
                 className='search-button'
             // onClick={onClickHandler}
